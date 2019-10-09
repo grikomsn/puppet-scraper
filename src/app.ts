@@ -1,5 +1,5 @@
-import { createInstance } from '@'
-import { flatten, toCsv } from '@/utilities'
+import { createInstance } from '../src/scrappeteer/index'
+import { flatten, toCsv } from '../src/scrappeteer/utilities'
 import fs from 'fs'
 import path from 'path'
 
