@@ -1,4 +1,5 @@
-import Puppeteer, { Browser, Page, ResourceType } from 'puppeteer'
+import { puppeteer } from 'chrome-aws-lambda'
+import { Browser, Page, ResourceType } from 'puppeteer-core'
 
 import { defaultConfig, defaultWorkerProps } from './defaults'
 import { Configuration, ScrapeOnceProps, ScrapeProps } from './types'
@@ -7,7 +8,7 @@ import { curryEvaluate } from './utilities'
 export async function createInstance(config: Configuration = {}) {
   config = { ...defaultConfig, ...config }
 
-  const browser: Browser = await Puppeteer.launch(config.browserOptions)
+  const browser: Browser = await puppeteer.launch(config.browserOptions)
   const workers: Page[] = await Promise.all(
     Array(config.numberOfWorkers)
       .fill(undefined)
