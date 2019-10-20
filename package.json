@@ -11,8 +11,9 @@
     "start": "ts-node src/app.ts"
   },
   "dependencies": {
+    "chrome-aws-lambda": "^1.20.3",
     "papaparse": "^5.1.0",
-    "puppeteer": "^1.20.0",
+    "puppeteer-core": "^1.20.0",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3"
   },
