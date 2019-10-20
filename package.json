@@ -8,7 +8,8 @@
   "bugs": "https://github.com/grikomsn/scrappeteer/issues",
   "scripts": {
     "format": "prettier --config package.json --write src/**/*.ts",
-    "start": "ts-node src/app.ts"
+    "start": "ts-node src/app.ts",
+    "start:local": "AWS_EXECUTION_ENV = \"AWS_Lambda_nodejs8.10\" AWS_LAMBDA_FUNCTION_NAME = \"scrappeteer\" ts-node src/app.ts"
   },
   "dependencies": {
     "@types/puppeteer-core": "^1.9.0",
@@ -21,7 +22,8 @@
   "devDependencies": {
     "@types/papaparse": "^5.0.1",
     "husky": "^3.0.8",
-    "prettier": "^1.18.2"
+    "prettier": "^1.18.2",
+    "puppeteer": "^1.20.0"
   },
   "husky": {
     "hooks": {
