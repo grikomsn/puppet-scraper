@@ -1,0 +1,59 @@
+{
+  "name": "scrappeteer",
+  "description": "Scraping using Puppeteer the sane way 🤹🏻‍♂️",
+  "version": "0.2.0",
+  "repository": "https://github.com/grikomsn/scrappeteer.git",
+  "author": "Griko Nibras <git@griko.id>",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/scrappeteer.esm.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "tsdx build",
+    "build": "tsdx build",
+    "lint": "tsdx lint --fix src test types",
+    "test": "tsdx test",
+    "watch": "tsdx watch",
+    "format": "yarn format:examples && yarn format:index",
+    "format:examples": "prettier --write \"examples/**/*.js\"",
+    "format:index": "prettier --write \"*.{js,json,md}\"",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
+  },
+  "dependencies": {
+    "promise-retry": "^1.1.1",
+    "puppeteer-core": "^3.0.2"
+  },
+  "peerDependencies": {
+    "puppeteer": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/promise-retry": "^1.1.3",
+    "@types/puppeteer": "^2.0.1",
+    "@types/puppeteer-core": "^2.0.0",
+    "all-contributors-cli": "^6.14.2",
+    "husky": "^4.2.5",
+    "tsdx": "^0.13.2",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && yarn lint && yarn contributors:generate"
+    }
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "license": "MIT"
+}
