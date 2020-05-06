@@ -25,7 +25,7 @@
 
 ---
 
-**Scrappeteer is a opinionated wrapper library for utilizing [Puppeteer](https://github.com/puppeteer/puppeteer) to scrape pages easily.**
+**Scrappeteer is a opinionated wrapper library for utilizing [Puppeteer](https://github.com/puppeteer/puppeteer) to scrape pages easily, bootstrapped using [Jared Palmer's tsdx](https://github.com/jaredpalmer/tsdx).**
 
 Most people create a new scraping project by `require`-ing Puppeteer and create their own logic to scrape pages, and that logic will get more complicated when trying to use multiple pages.
 
