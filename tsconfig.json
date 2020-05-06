@@ -1,21 +1,24 @@
-// https://github.com/microsoft/TypeScript-Node-Starter/blob/master/tsconfig.json
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
+    "declaration": true,
     "esModuleInterop": true,
-    "module": "commonjs",
+    "importHelpers": true,
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
     "moduleResolution": "node",
-    "noImplicitAny": true,
-    "outDir": "dist",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "paths": {
-      "@": ["src/scrappeteer/index"],
-      "@/*": ["src/scrappeteer/*"],
       "*": ["node_modules/*"]
     },
-    "resolveJsonModule": true,
+    "rootDir": "./src",
     "sourceMap": true,
-    "target": "es6"
+    "strict": true,
+    "strictNullChecks": false
   },
-  "include": ["src/**/*"]
+  "include": ["src", "types"]
 }
