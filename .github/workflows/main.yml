@@ -23,7 +23,8 @@ jobs:
 
       - name: Install dependencies
         uses: ianwalter/puppeteer@cbdd5c50c8d6b6275cdf46e4ad2b3f7ee61211ce
-        run: yarn install --frozen-lockfile
+        with:
+          args: yarn install --frozen-lockfile
         env:
           CI: true
 
@@ -34,7 +35,8 @@ jobs:
 
       - name: Test
         uses: ianwalter/puppeteer@cbdd5c50c8d6b6275cdf46e4ad2b3f7ee61211ce
-        run: yarn test --ci --coverage --maxWorkers=2
+        with:
+          args: yarn test --ci --coverage --maxWorkers=2
         env:
           CI: true
 
