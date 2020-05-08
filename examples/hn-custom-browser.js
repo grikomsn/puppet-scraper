@@ -1,13 +1,13 @@
-const { Scrappeteer } = require('..');
+const { PuppetScraper } = require('..');
 
 async function hnCustomBrowser() {
-  const sc = await Scrappeteer.launch({
+  const ps = await PuppetScraper.launch({
     executablePath:
       'C:\\Program Files (x86)\\Microsoft\\Edge Dev\\Application\\msedge.exe',
     headless: false,
   });
 
-  const data = await sc.scrapeFromUrl({
+  const data = await ps.scrapeFromUrl({
     url: 'https://news.ycombinator.com',
     evaluateFn: () => {
       let items = [];
@@ -25,7 +25,7 @@ async function hnCustomBrowser() {
 
   console.log({ data });
 
-  await sc.close();
+  await ps.close();
 }
 
 hnCustomBrowser();

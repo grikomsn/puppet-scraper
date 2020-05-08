@@ -33,9 +33,9 @@ export type ScrapeFromUrls = <T>(
 
 // #endregion
 
-// #region Scrappeteer
+// #region PuppetScraper
 
-export interface ScInstance {
+export interface PSInstance {
   scrapeFromUrl: ScrapeFromUrl;
   scrapeFromUrls: ScrapeFromUrls;
   close: () => Promise<void>;
@@ -45,24 +45,24 @@ export interface ScInstance {
   };
 }
 
-export type ScBootstrapProps = {
+export type PSBootstrapProps = {
   browser?: Browser;
   concurrentPages?: number;
   maxEvaluationRetries?: number;
 };
 
-export type ScBootstrap = (props?: ScBootstrapProps) => Promise<ScInstance>;
+export type PSBootstrap = (props?: PSBootstrapProps) => Promise<PSInstance>;
 
-export type ScLaunchOptions = ScBootstrapProps & LaunchOptions;
+export type PSLaunchOptions = PSBootstrapProps & LaunchOptions;
 
-export type ScLaunch = (opts?: ScLaunchOptions) => ReturnType<ScBootstrap>;
+export type PSLaunch = (opts?: PSLaunchOptions) => ReturnType<PSBootstrap>;
 
-export type ScConnectOptions = ScBootstrapProps & ConnectOptions;
+export type PSConnectOptions = PSBootstrapProps & ConnectOptions;
 
-export type ScConnect = (opts: ScConnectOptions) => ReturnType<ScBootstrap>;
+export type PSConnect = (opts: PSConnectOptions) => ReturnType<PSBootstrap>;
 
-export type ScUseOptions = ScBootstrapProps & { browser: Browser };
+export type PSUseOptions = PSBootstrapProps & { browser: Browser };
 
-export type ScUse = (opts: ScUseOptions) => ReturnType<ScBootstrap>;
+export type PSUse = (opts: PSUseOptions) => ReturnType<PSBootstrap>;
 
 // #endregion

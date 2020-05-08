@@ -1,6 +1,6 @@
-import { ScLaunchOptions } from '..';
+import { PSLaunchOptions } from '..';
 
-export const launchOptions: ScLaunchOptions = {
+export const launchOptions: PSLaunchOptions = {
   ...(process.env.CI
     ? { executablePath: 'google-chrome-stable', args: ['--no-sandbox'] }
     : {}),

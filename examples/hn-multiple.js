@@ -1,7 +1,7 @@
-const { Scrappeteer } = require('..');
+const { PuppetScraper } = require('..');
 
 async function hnMultiple() {
-  const sc = await Scrappeteer.launch({
+  const ps = await PuppetScraper.launch({
     concurrentPages: 5,
   });
 
@@ -9,7 +9,7 @@ async function hnMultiple() {
     (_, i) => `https://news.ycombinator.com/news?p=${i + 1}`,
   );
 
-  const data = await sc.scrapeFromUrls({
+  const data = await ps.scrapeFromUrls({
     urls,
     evaluateFn: () => {
       let items = [];
@@ -27,7 +27,7 @@ async function hnMultiple() {
 
   console.log({ data });
 
-  await sc.close();
+  await ps.close();
 }
 
 hnMultiple();
