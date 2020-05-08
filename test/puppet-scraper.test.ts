@@ -1,4 +1,4 @@
-import { ScInstance, Scrappeteer } from '..';
+import { PSInstance, PuppetScraper } from '..';
 import { sleep } from './utils';
 import { launchOptions, timeout } from './variables';
 
@@ -8,10 +8,10 @@ describe('launching instance', () => {
   it(
     'should launch and close without errors',
     () => {
-      let instance: ScInstance;
+      let instance: PSInstance;
 
       const instantiateAndClose = async () => {
-        instance = await Scrappeteer.launch(launchOptions);
+        instance = await PuppetScraper.launch(launchOptions);
         await instance.close();
       };
 
@@ -22,10 +22,10 @@ describe('launching instance', () => {
 });
 
 describe('scrape hacker news from single url', () => {
-  let instance: ScInstance;
+  let instance: PSInstance;
 
   beforeAll(() => {
-    const creating = Scrappeteer.launch(launchOptions);
+    const creating = PuppetScraper.launch(launchOptions);
     return creating.then((created) => (instance = created));
   }, timeout);
 
@@ -84,10 +84,10 @@ describe('scrape hacker news from single url', () => {
 });
 
 describe('scrape hacker news from multiple urls', () => {
-  let instance: ScInstance;
+  let instance: PSInstance;
 
   beforeAll(async () => {
-    const creating = Scrappeteer.launch(launchOptions);
+    const creating = PuppetScraper.launch(launchOptions);
     return creating.then((created) => (instance = created));
   }, timeout);
 

@@ -1,9 +1,9 @@
-const { Scrappeteer } = require('..');
+const { PuppetScraper } = require('..');
 
 async function hn() {
-  const sc = await Scrappeteer.launch();
+  const ps = await PuppetScraper.launch();
 
-  const data = await sc.scrapeFromUrl({
+  const data = await ps.scrapeFromUrl({
     url: 'https://news.ycombinator.com',
     evaluateFn: () => {
       let items = [];
@@ -21,7 +21,7 @@ async function hn() {
 
   console.log({ data });
 
-  await sc.close();
+  await ps.close();
 }
 
 hn();

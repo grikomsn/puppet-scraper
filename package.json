@@ -1,15 +1,15 @@
 {
-  "name": "scrappeteer",
+  "name": "puppet-scraper",
   "description": "Scraping using Puppeteer the sane way 🤹🏻‍♂️",
   "version": "0.2.0",
-  "repository": "https://github.com/grikomsn/scrappeteer.git",
+  "repository": "https://github.com/grikomsn/puppet-scraper.git",
   "author": "Griko Nibras <git@griko.id>",
   "files": [
     "dist",
     "src"
   ],
   "main": "dist/index.js",
-  "module": "dist/scrappeteer.esm.js",
+  "module": "dist/puppet-scraper.esm.js",
   "typings": "dist/index.d.ts",
   "scripts": {
     "prepare": "tsdx build",

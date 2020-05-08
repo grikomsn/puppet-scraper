@@ -7,15 +7,15 @@ import {
   DEFAULT_PAGE_OPTIONS,
 } from './defaults';
 import {
-  ScBootstrap,
-  ScConnect,
-  ScLaunch,
+  PSBootstrap,
+  PSConnect,
+  PSLaunch,
+  PSUse,
   ScrapeFromUrl,
   ScrapeFromUrls,
-  ScUse,
 } from './types';
 
-const bootstrap: ScBootstrap = async ({
+const bootstrap: PSBootstrap = async ({
   browser,
   concurrentPages = DEFAULT_CONCURRENT_PAGES,
   maxEvaluationRetries = DEFAULT_EVALUATION_RETRIES,
@@ -117,7 +117,7 @@ const bootstrap: ScBootstrap = async ({
   };
 };
 
-const connect: ScConnect = async ({
+const connect: PSConnect = async ({
   concurrentPages,
   maxEvaluationRetries,
   ...opts
@@ -126,7 +126,7 @@ const connect: ScConnect = async ({
   return bootstrap({ browser, concurrentPages, maxEvaluationRetries });
 };
 
-const launch: ScLaunch = async ({
+const launch: PSLaunch = async ({
   concurrentPages,
   maxEvaluationRetries,
   ...opts
@@ -135,11 +135,11 @@ const launch: ScLaunch = async ({
   return bootstrap({ browser, concurrentPages, maxEvaluationRetries });
 };
 
-const use: ScUse = (opts) => {
+const use: PSUse = (opts) => {
   if (!opts.browser) {
     throw new Error('browser is not defined');
   }
   return bootstrap(opts);
 };
 
-export const Scrappeteer = { connect, launch, use };
+export const PuppetScraper = { connect, launch, use };

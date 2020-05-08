@@ -2,10 +2,10 @@
 
 <div align="center">
 
-[![scrappeteer](./header.png)](.)
+[![puppet-scraper](./header.png)](.)
 
-![github release](https://badgen.net/github/release/grikomsn/scrappeteer?icon=github)
-![npm version](https://badgen.net/npm/v/scrappeteer?icon=npm)
+![github release](https://badgen.net/github/release/grikomsn/puppet-scraper?icon=github)
+![npm version](https://badgen.net/npm/v/puppet-scraper?icon=npm)
 
 </div>
 
@@ -25,13 +25,13 @@
 
 ---
 
-**Scrappeteer is a opinionated wrapper library for utilizing [Puppeteer](https://github.com/puppeteer/puppeteer) to scrape pages easily, bootstrapped using [Jared Palmer's tsdx](https://github.com/jaredpalmer/tsdx).**
+**PuppetScraper is a opinionated wrapper library for utilizing [Puppeteer](https://github.com/puppeteer/puppeteer) to scrape pages easily, bootstrapped using [Jared Palmer's tsdx](https://github.com/jaredpalmer/tsdx).**
 
 Most people create a new scraping project by `require`-ing Puppeteer and create their own logic to scrape pages, and that logic will get more complicated when trying to use multiple pages.
 
-Scrappeteer allows you to just pass the URLs to scrape, the function to evaluate (the scraping logic), and how many pages (or tabs) to open at a time. Basically, Scrappeteer abstracts the need to create multiple page instances and retrying the evaluation logic.
+PuppetScraper allows you to just pass the URLs to scrape, the function to evaluate (the scraping logic), and how many pages (or tabs) to open at a time. Basically, PuppetScraper abstracts the need to create multiple page instances and retrying the evaluation logic.
 
-**Version 0.1.0 note**: Scrappeteer was initially made as a project template rather than a wrapper library, but the core logic is still the same with various improvements and without extra libraries, so you can include Scrappeteer in your project easily using `npm` or `yarn`.
+**Version 0.1.0 note**: PuppetScraper was initially made as a project template rather than a wrapper library, but the core logic is still the same with various improvements and without extra libraries, so you can include PuppetScraper in your project easily using `npm` or `yarn`.
 
 ## Brief example
 
@@ -40,11 +40,11 @@ Here's a [basic example](./examples/hn.js) on scraping the entries on [first pag
 ```js
 // examples/hn.js
 
-const { Scrappeteer } = require('scrappeteer');
+const { PuppetScraper } = require('puppet-scraper');
 
-const sc = await Scrappeteer.launch();
+const ps = await PuppetScraper.launch();
 
-const data = await sc.scrapeFromUrl({
+const data = await ps.scrapeFromUrl({
   url: 'https://news.ycombinator.com',
   evaluateFn: () => {
     let items = [];
@@ -62,7 +62,7 @@ const data = await sc.scrapeFromUrl({
 
 console.log({ data });
 
-await sc.close();
+await ps.close();
 ```
 
 View more examples on the [`examples` directory](./examples).
@@ -71,12 +71,12 @@ View more examples on the [`examples` directory](./examples).
 
 ### Installing dependency
 
-Install `scrappeteer` via `npm` or `yarn`:
+Install `puppet-scraper` via `npm` or `yarn`:
 
 ```console
-$ npm install scrappeteer
+$ npm install puppet-scraper
       --- or ---
-$ yarn add scrappeteer
+$ yarn add puppet-scraper
 ```
 
 Install peer dependency `puppeteer` or Puppeteer equivalent ([`chrome-aws-lambda`](https://github.com/alixaxel/chrome-aws-lambda), untested):
@@ -89,23 +89,23 @@ $ yarn add puppeteer
 
 ### Instantiation
 
-Create the Scrappeteer instance, either launching a new browser instance, connect or use an existing browser instance:
+Create the PuppetScraper instance, either launching a new browser instance, connect or use an existing browser instance:
 
 ```js
-const { Scrappeteer } = require('scrappeteer');
+const { PuppetScraper } = require('puppet-scraper');
 const Puppeteer = require('puppeteer');
 
 // launches a new browser instance
-const instance = await Scrappeteer.launch();
+const instance = await PuppetScraper.launch();
 
 // connect to an existing browser instance
-const external = await Scrappeteer.connect({
+const external = await PuppetScraper.connect({
   browserWSEndpoint: 'ws://127.0.0.1:9222/devtools/browser/...',
 });
 
 // use an existing browser instance
 const browser = await Puppeteer.launch();
-const existing = await Scrappeteer.use({ browser });
+const existing = await PuppetScraper.use({ browser });
 ```
 
 ### Customize options
@@ -113,9 +113,9 @@ const existing = await Scrappeteer.use({ browser });
 `launch` and `connect` has the same props with `Puppeteer.launch` and `Puppeteer.connect`, but with an extra `concurrentPages` and `maxEvaluationRetries` property:
 
 ```js
-const { Scrappeteer } = require('scrappeteer');
+const { PuppetScraper } = require('puppet-scraper');
 
-const instance = await Scrappeteer.launch({
+const instance = await PuppetScraper.launch({
   concurrentPages: 3,
   maxEvaluationRetries: 10
   headless: false,
@@ -174,7 +174,7 @@ const urls = Array.from({ length: 5 }).map(
   (_, i) => `https://news.ycombinator.com/news?p=${i + 1}`,
 );
 
-const data = await sc.scrapeFromUrls({
+const data = await ps.scrapeFromUrls({
   urls,
   evaluateFn: () => {
     let items = [];
@@ -201,7 +201,7 @@ await instance.close();
 
 ### Access the browser instance
 
-Scrappeteer also exposes the browser instance if you want to do things manually:
+PuppetScraper also exposes the browser instance if you want to do things manually:
 
 ```js
 const browser = instance.___internal.browser;
@@ -216,7 +216,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://griko.id"><img src="https://avatars1.githubusercontent.com/u/8220954?v=4" width="100px;" alt=""/><br /><sub><b>Griko Nibras</b></sub></a><br /><a href="https://github.com/grikomsn/scrappeteer/commits?author=grikomsn" title="Code">💻</a> <a href="#maintenance-grikomsn" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://griko.id"><img src="https://avatars1.githubusercontent.com/u/8220954?v=4" width="100px;" alt=""/><br /><sub><b>Griko Nibras</b></sub></a><br /><a href="https://github.com/grikomsn/puppet-scraper/commits?author=grikomsn" title="Code">💻</a> <a href="#maintenance-grikomsn" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 

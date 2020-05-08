@@ -1,4 +1,4 @@
 export * from './defaults';
 export * from './types';
 
-export { Scrappeteer } from './scrappeteer';
+export { PuppetScraper } from './puppet-scraper';
