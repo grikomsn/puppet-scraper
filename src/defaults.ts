@@ -1,4 +1,4 @@
-import { DirectNavigationOptions } from 'puppeteer';
+import { DirectNavigationOptions } from 'puppeteer-core';
 
 export const DEFAULT_CONCURRENT_PAGES = 3;
 

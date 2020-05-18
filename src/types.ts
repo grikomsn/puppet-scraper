@@ -3,7 +3,7 @@ import {
   ConnectOptions,
   DirectNavigationOptions,
   LaunchOptions,
-} from 'puppeteer';
+} from 'puppeteer-core';
 
 // #region ScrapeFromUrl
 

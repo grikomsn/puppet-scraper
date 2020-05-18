@@ -1,5 +1,5 @@
 import promiseRetry from 'promise-retry';
-import Puppeteer, { Page } from 'puppeteer';
+import Puppeteer, { Page } from 'puppeteer-core';
 
 import {
   DEFAULT_CONCURRENT_PAGES,
