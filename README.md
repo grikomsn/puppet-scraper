@@ -174,7 +174,7 @@ const urls = Array.from({ length: 5 }).map(
   (_, i) => `https://news.ycombinator.com/news?p=${i + 1}`,
 );
 
-const data = await ps.scrapeFromUrls({
+const data = await instance.scrapeFromUrls({
   urls,
   evaluateFn: () => {
     let items = [];

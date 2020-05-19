@@ -1,7 +1,7 @@
 {
   "name": "puppet-scraper",
   "description": "Scraping using Puppeteer the sane way 🤹🏻‍♂️",
-  "version": "0.2.0",
+  "version": "0.2.1-canary.2",
   "repository": "https://github.com/grikomsn/puppet-scraper.git",
   "author": "Griko Nibras <git@griko.id>",
   "files": [
@@ -25,21 +25,16 @@
   },
   "dependencies": {
     "promise-retry": "^1.1.1",
-    "puppeteer-core": "^3.0.3"
-  },
-  "peerDependencies": {
-    "puppeteer": "^3.0.3"
+    "puppeteer-core": "^3.0.4"
   },
   "devDependencies": {
     "@types/promise-retry": "^1.1.3",
-    "@types/puppeteer": "^2.0.1",
     "@types/puppeteer-core": "^2.0.0",
     "all-contributors-cli": "^6.14.2",
     "husky": "^4.2.5",
-    "puppeteer": "^3.0.3",
     "tsdx": "^0.13.2",
-    "tslib": "^1.11.2",
-    "typescript": "^3.8.3"
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.2"
   },
   "engines": {
     "node": ">=10"

@@ -1,5 +1,5 @@
 import promiseRetry from 'promise-retry';
-import Puppeteer, { Page } from 'puppeteer';
+import Puppeteer, { Page } from 'puppeteer-core';
 
 import {
   DEFAULT_CONCURRENT_PAGES,
@@ -7,6 +7,7 @@ import {
   DEFAULT_PAGE_OPTIONS,
 } from './defaults';
 import {
+  PS,
   PSBootstrap,
   PSConnect,
   PSLaunch,
@@ -142,4 +143,4 @@ const use: PSUse = (opts) => {
   return bootstrap(opts);
 };
 
-export const PuppetScraper = { connect, launch, use };
+export const PuppetScraper: PS = { connect, launch, use };
