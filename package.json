@@ -1,7 +1,7 @@
 {
   "name": "puppet-scraper",
   "description": "Scraping using Puppeteer the sane way 🤹🏻‍♂️",
-  "version": "0.2.1-canary.1",
+  "version": "0.2.1-canary.2",
   "repository": "https://github.com/grikomsn/puppet-scraper.git",
   "author": "Griko Nibras <git@griko.id>",
   "files": [
