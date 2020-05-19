@@ -65,4 +65,10 @@ export type PSUseOptions = PSBootstrapProps & { browser: Browser };
 
 export type PSUse = (opts: PSUseOptions) => ReturnType<PSBootstrap>;
 
+export type PS = {
+  connect: PSConnect,
+  launch: PSLaunch,
+  use: PSUse
+}
+
 // #endregion
